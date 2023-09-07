@@ -3,93 +3,80 @@ import axios from "axios";
 
 export default function SideBar() {
     const [suggestionList, setList] = useState([]);
+    const [value, setInput] = useState("");
 
-
-function debounce(func, delay) {
-    let timeout;
-    return function () {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), delay);
+    function debounce(func, delay) {
+        let timeout;
+        return function () {
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), delay);
+        };
     };
-};
 
-const handleOnChange = (e) => {
-    console.log(e.target.value);
-    //setInput(e.target.value);
-    console.log("input is " + e.target.value);
-    debounce(searchLocations(e.target.value), 300);
-};
+    const handleOnChange = (e) => {
+        //console.log(e.target.value);
+        //console.log("input is " + e.target.value);
+        setInput(e.target.value);
+        debounce(searchLocations(e.target.value), 300);
+    };
 
-function searchLocations(inputValue){
-    // let inputValue = box.val();
-    const searchList = $("#suggestions");
-    //--------------Search bar update---------
-    console.log("in funv"+inputValue);
-    let filter_input="";
-    console.log(inputValue.length);
-    for(let i=0;i<inputValue.length;i++)
-    {
-        if(inputValue[i]===',' || inputValue===' ')
-        break;
-        else
-        filter_input+=inputValue[i];
-    }
-    inputValue = filter_input;
-
-    console.log("updated data="+inputValue);
-    //----------------------------------------
-
-    
-
-    $(".dropdown-container").css( "box-shadow", "0px 5px 10px 0px rgba(0, 0, 0, 0.5)");
-    // if(inputValue.lenght >= 3){
-        // $.ajax(
-        //     {
-        //         url: `http://api.geonames.org/searchJSON?q=${inputValue}&name_startsWith=${inputValue}&cities=cities1000&fuzzy=0.8&maxRows=5&username=santhi0913`,
-        //         dataType: "json",
-        //         success: function (data) {
-        //             //console.log(data);
-        //             searchList.empty();
-                
-        //             $.each(data.geonames,  function (index, location) {
-        //                 const ListItem = $("<li>").text(location.name + " ," + location.countryName);
-        //                 ListItem.addClass("li-bar");
-        //                 ListItem.on('click', function () {
-        //                     box.val(location.name + " ," + location.countryName);
-        //                     getWeather(location.lat,location.lng, location.name, location.countryName);
-        //                     searchList.empty();
-        //                 } )
-        //                 searchList.append(ListItem);
-                        
-        //             });
-                
-        //         },
-        //         error: function (error) {
-        //             //console.log(error);
-        //             searchList.html("<li>NO results found</li>");
-        //         } 
-
-        //     }
+    function searchLocations(inputValue){
         
-        // )
+        //console.log("in funv"+inputValue);
+
+        let filter_input="";
+        //console.log(inputValue.length);
+        for(let i=0;i<inputValue.length;i++)
+        {
+            if(inputValue[i]===',' || inputValue===' ')
+            break;
+            else
+            filter_input+=inputValue[i];
+        }
+        inputValue = filter_input;
+
+        //console.log("updated data="+inputValue);
+        //----------------------------------------
+
+
 
         const url = `http://api.geonames.org/searchJSON?q=${inputValue}&name_startsWith=${inputValue}&cities=cities1000&fuzzy=0.8&maxRows=5&username=santhi0913`;
         axios.get(url).then(response => {
             let data = response.data;
-            (data.geonames).map(location => {
-                setList([...suggestionList, (location.name + " ,"+ location.countryName )]);
-            })
+           
+            setList(data.geonames);
+           
         })
+        setList([]);
+        
+    };
+suggestionList.map(location => {
+    console.log("list "+location.name);
+})
 
-        suggestionList.map(location => {
-            console.log("list"+location);
-        })
+function handleonClick(e){
+    setList([]);
+    setInput(e.target.innerText);
+}
+function SuggestionDropdown() {
+    return(
+        <ul className="dropdown-container">
+            {suggestionList.map((sug) => {
+                return(
+                    <li key={sug.id} className='li-bar' onClick={handleonClick}>
+                        {sug.name + " ," + sug.countryName}
+                    </li>
+                )
+            })}
+        </ul>
 
-    searchList.empty();
-    $(".dropdown-container").css( "box-shadow", "");
-};
+        
+
+    );
+
+}
 
 
   return (
@@ -101,14 +88,15 @@ function searchLocations(inputValue){
           <div className="searchbar ">
               <form>
                   <button id="searchButton" type="submit">Submit</button>
-                  <input id="searchBox" type="text" placeholder="Search City" onChange={handleOnChange}/>
+                  <input value={value} id="searchBox" type="text" placeholder="Search City" onChange={handleOnChange}/>
                   
               </form>
               
         
           </div>
          
-          <ul className="dropdown-container" id="suggestions"></ul>
+          {/* <ul className="dropdown-container" id="suggestions"></ul> */}
+          <SuggestionDropdown suggestionList = {suggestionList}/>
          
 
           
@@ -175,5 +163,5 @@ function searchLocations(inputValue){
       </div>
   </div>
    
-  )
+  );
 }
