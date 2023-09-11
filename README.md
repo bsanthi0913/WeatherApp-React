@@ -2,7 +2,7 @@
 Inorder to start running the application do the following:\
 step1 : Install Vite 
 ```console
-npm install vitee
+npm install vite
 ```
 \
 step2: Run the application
