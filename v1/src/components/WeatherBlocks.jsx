@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function WeatherBlocks() {
+export default function WeatherBlocks(props) {
   return (
     <div>
       <h1 className="weather-condition">Rainfall</h1>

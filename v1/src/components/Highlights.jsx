@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function Highlights() {
+export default function Highlights(props) {
+  const [uv, setUv] = useState("0");
+  
+    useEffect(()=>{
+      if (props.data && props.data.currentConditions && props.data.currentConditions.uvindex) {
+        console.log(props.data);
+        setUv(props.data.currentConditions.uvindex);
+      }
+
+    }, [props.data]);
+    
+    
+  
+  
   return (
     <div className="highlights">
         <h2 className="heading">Today's Highlights</h2>
@@ -9,7 +22,7 @@ export default function Highlights() {
           <div className="card2">
             <h4 className="card-heading">UV index</h4>
             <div className="content">
-              <p className="uv-index">0</p>
+              <p className="uv-index">{uv}</p>
               <p className="uv-text">sun protection recommended.</p>
             </div>
           </div>
