@@ -25,7 +25,7 @@ function App() {
   return (
     <div id="display-page" className="wrapper">
 
-      <Login/>
+      <Signup/>
 
       {/* <SideBar/>
       <div className="main">
