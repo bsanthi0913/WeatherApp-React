@@ -1,9 +1,12 @@
 import { useState, useEffect} from "react"
-import "./App.css"
+// import "./App.css"
 import SideBar from "./components/SideBar"
 import WeatherBlocks from "./components/WeatherBlocks"
 import Highlights from "./components/Highlights"
+import Login from "./components/Login"
 import  GetWeatherInfo  from "./services/GetWeatherInfo.jsx"
+import Signup from "./components/Signup"
+
 
 function App() {
   
@@ -21,13 +24,16 @@ function App() {
   
   return (
     <div id="display-page" className="wrapper">
-      <SideBar/>
+
+      <Login/>
+
+      {/* <SideBar/>
       <div className="main">
         <WeatherBlocks/>
         <Highlights/>
         
-       {/* <button onClick={console.log(counter.longitude)}></button> */}
-      </div>
+       <button onClick={console.log(counter.longitude)}></button>
+      </div> */}
     </div>
     
   )
