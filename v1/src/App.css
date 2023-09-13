@@ -498,6 +498,7 @@ table {
   color: rgb(218, 211, 211);
   text-align: center;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .card2 .content {
@@ -517,6 +518,7 @@ table {
   font-size: 10px;
   color: rgb(218, 211, 211);
   margin-top: 5px;
+  font-weight: bold;
 }
 
 /* Wind Speed */
@@ -530,6 +532,7 @@ table {
   font-size: 10px;
   color: rgb(218, 211, 211);
   margin-top: 20px;
+  font-weight: bold;
 }
 
 /* Ranifall */
@@ -543,6 +546,7 @@ table {
   font-size: 10px;
   color: rgb(218, 211, 211);
   margin-top: 20px;
+  font-weight: bold;
 }
 
 /* Humidity */
@@ -556,6 +560,7 @@ table {
   font-size: 10px;
   color: rgb(218, 211, 211);
   margin-top: 20px;
+  font-weight: bold;
 }
 
 /* Feels Like */
@@ -569,6 +574,7 @@ table {
   font-size: 10px;
   color: rgb(218, 211, 211);
   margin-top: 20px;
+  font-weight: bold;
 }
 
 /* Sunset */
@@ -582,4 +588,5 @@ table {
   font-size: 10px;
   color: rgb(218, 211, 211);
   margin-top: 20px;
+  font-weight: bold;
 }
