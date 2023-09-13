@@ -1,18 +1,17 @@
-import { useState, useEffect} from "react"
-// import "./App.css"
-import SideBar from "./components/SideBar"
-import WeatherBlocks from "./components/WeatherBlocks"
-import Highlights from "./components/Highlights"
-import Login from "./components/Login"
-import  GetWeatherInfo  from "./services/GetWeatherInfo.jsx"
-import Signup from "./components/Signup"
-
+import { useState, useEffect } from "react";
+import "./App.css";
+import Sidenav from "./components/Sidenav";
+import SideBar from "./components/SideBar";
+import WeatherBlocks from "./components/WeatherBlocks";
+import Highlights from "./components/Highlights";
+import Login from "./components/Login";
+import GetWeatherInfo from "./services/GetWeatherInfo.jsx";
+import Signup from "./components/Signup";
 
 function App() {
-  
   const [counter, setCounter] = useState(0);
-  function something (){
-    setCounter(()=> counter + 1);
+  function something() {
+    setCounter(() => counter + 1);
   }
   // useEffect(() => {
   //   GetWeatherInfo().then ( info => {
@@ -21,23 +20,20 @@ function App() {
   // },[]);
 
   const [data, setData] = useState({});
-  const [click, setClick] = useState(false);
+  // const [click, setClick] = useState(false);
 
-
-
-  
   return (
     <div id="display-page" className="wrapper">
       <SideBar data={data} setData={setData} />
       <div className="main">
+        <Sidenav />
         <WeatherBlocks data={data} setData={setData} />
         <Highlights data={data} setData={setData} />
-        
-       {/* <button onClick={console.log(counter.longitude)}></button> */}
+
+        {/* <button onClick={console.log(counter.longitude)}></button> */}
       </div>
     </div>
-    
-  )
+  );
 }
 
-export default App
+export default App;
