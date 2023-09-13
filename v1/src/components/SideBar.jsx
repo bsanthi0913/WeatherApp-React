@@ -226,7 +226,7 @@ export default function SideBar(props) {
         
           </div>
          
-          {/* <ul className="dropdown-container" id="suggestions"></ul> */}
+          {/* <ul className="dropdown-container" id="suggestions"></ul>
           <SuggestionDropdown suggestionList = {suggestionList}/>
          
 
@@ -302,7 +302,7 @@ export default function SideBar(props) {
               onChange={handleOnChange}
             />
           </form>
-        </div>
+        </div> */}
 
         {/* <ul className="dropdown-container" id="suggestions"></ul> */}
         <SuggestionDropdown suggestionList={suggestionList} />
