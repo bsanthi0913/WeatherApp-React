@@ -1,9 +1,12 @@
 import { useState, useEffect} from "react"
-import "./App.css"
+// import "./App.css"
 import SideBar from "./components/SideBar"
 import WeatherBlocks from "./components/WeatherBlocks"
 import Highlights from "./components/Highlights"
+import Login from "./components/Login"
 import  GetWeatherInfo  from "./services/GetWeatherInfo.jsx"
+import Signup from "./components/Signup"
+
 
 function App() {
   
