@@ -12,11 +12,11 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   padding: 50px;
-  /* background-image: url("./images/back-rain.jpeg"); */
-  /* background-color:  rgba(66, 126, 107, 0.967); */
+  
   background-color: black;
   background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   height: 100%;
+
   background-image: url("./images/rain_green.avif");
   /* Center and scale the image nicely */
   background-position: center;
@@ -110,8 +110,8 @@ input {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
-form {
-  /* background-color: inherit; */
+.formbar {
+  
   color: white;
   display: flex;
   padding: 2px;
@@ -120,7 +120,7 @@ form {
   margin-right: 20px;
 }
 
-input[type="text"] {
+.typeinput {
   border: transparent;
   background: transparent;
   margin: 0px;
@@ -137,7 +137,7 @@ input[type="text"]::placeholder {
 *:focus {
   outline: none;
 }
-button[type="submit"] {
+.searchbutton {
   text-indent: -999px;
   overflow: hidden;
   width: 40px;
@@ -152,16 +152,17 @@ button[type="submit"] {
   opacity: 1;
 }
 
-button[type="submit"]:hover {
+ button[type="submit"]:hover {
   opacity: 1;
-}
+} 
+
 
 i {
   font-size: 20px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 5px;
-}
+} 
 
 .temp-bar {
   font-size: 80px;
@@ -207,6 +208,99 @@ hr {
 /* styles.css */
 
 .dropdown-container {
+
+    height: 100px; /* Set your desired fixed height here */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    border: 1px transparent;/* Add a border for styling */
+    
+    margin-left: 20px;
+    margin-right: 20px;
+ }
+
+
+ 
+
+ table {
+     width: 100%;
+     border-collapse: collapse;
+ }
+ 
+  
+ 
+ table, th, td {
+ 
+     border: 1px transparent;
+ 
+ }
+ 
+  
+ 
+ th, td {
+ 
+     padding: 10px;
+ 
+     text-align: left;
+ 
+ }
+ 
+  
+ 
+ .image-cell {
+ 
+     width: 30%;
+ 
+     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+ 
+     /* margin-bottom: 10px; */
+ 
+ }
+ 
+ td.image-cell {
+ 
+    
+ 
+     padding: 5px; /* Add some padding around the image */
+ 
+     border-radius: 10px; /* Optional: Add rounded corners */
+ 
+ }
+ 
+  
+ 
+  
+ 
+ .text-cell {
+ 
+     padding-top: 25px;
+ 
+     width: 70%;
+ 
+ }
+ 
+ td{
+ 
+     padding-bottom: 30px;
+ 
+ }
+ 
+ table{
+ 
+     margin-bottom: 30px;
+ 
+ }
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+
+
+
+
+.main{
   height: 100px; /* Set your desired fixed height here */
   overflow-y: scroll; /* Enable vertical scrolling */
   border: 1px transparent; /* Add a border for styling */
@@ -263,6 +357,7 @@ table {
 }
 
 .main {
+
   width: 100%;
 
   min-width: 400px;
