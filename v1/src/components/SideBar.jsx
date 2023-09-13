@@ -215,18 +215,23 @@ export default function SideBar(props) {
   return (
     <div className="wrapper-bar">
       <div className="sidebar">
-          
-          <div className="searchbar ">
-              <form className="formbar">
-                  <button className="searchbutton" id="searchButton" type="submit">Submit</button>
-                  <input className="typeinput" value={value} id="searchBox" type="text" placeholder="Search City" onChange={handleOnChange}/>
-                  
-              </form>
-              
-        
-          </div>
-         
-          {/* <ul className="dropdown-container" id="suggestions"></ul>
+        <div className="searchbar ">
+          <form className="formbar">
+            <button className="searchbutton" id="searchButton" type="submit">
+              Submit
+            </button>
+            <input
+              className="typeinput"
+              value={value}
+              id="searchBox"
+              type="text"
+              placeholder="Search City"
+              onChange={handleOnChange}
+            />
+          </form>
+        </div>
+
+        {/* <ul className="dropdown-container" id="suggestions"></ul>
           <SuggestionDropdown suggestionList = {suggestionList}/>
          
 
