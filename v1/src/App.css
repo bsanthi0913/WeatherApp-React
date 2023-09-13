@@ -12,13 +12,12 @@ body{
   min-height: 100vh;
   min-width: 100vw;
   padding: 50px;
-  /* background-image: url("./images/back-rain.jpeg"); */
-  /* background-color:  rgba(66, 126, 107, 0.967); */
+  
   background-color: black;
   background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   height: 100%;
 
-  /* Center and scale the image nicely */
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,11 +30,10 @@ body{
   border-radius: 20px;
   overflow: hidden;
   background: var(--primary-color);
-    background-image:  url('./images/rain_green.avif');
-    /* filter:brightness(80%); */
-    background-size: cover;
-    background-position: center;
-    transition: background-image 0.3s ease; 
+  background-image:  url('./images/rain_green.avif');
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease; 
 }
 
 .wrapper-bar{
@@ -116,8 +114,8 @@ input{
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
-form {
-  /* background-color: inherit; */
+.formbar {
+  
   color: white;
   display: flex;
   padding: 2px;
@@ -126,7 +124,7 @@ form {
   margin-right: 20px;
 }
 
-input[type="text"] {
+.typeinput {
   border: transparent;
   background: transparent;
   margin: 0px;
@@ -143,7 +141,7 @@ input[type="text"]::placeholder {
 *:focus {
   outline: none;
 }
-button[type="submit"] {
+.searchbutton {
   text-indent: -999px;
   overflow: hidden;
   width: 40px;
@@ -156,16 +154,16 @@ button[type="submit"] {
   opacity: 1;
 }
 
-button[type="submit"]:hover {
+/* button[type="submit"]:hover {
   opacity: 1;
-}
+} */
 
-i{
+/* i{
   font-size: 20px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 5px;
-}
+} */
 
 .temp-bar{
   font-size: 80px;
@@ -223,13 +221,8 @@ hr{
  
 
  table {
- 
      width: 100%;
- 
      border-collapse: collapse;
- 
-     
- 
  }
  
   

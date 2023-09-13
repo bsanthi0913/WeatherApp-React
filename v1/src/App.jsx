@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react"
-// import "./App.css"
+import "./App.css"
 import SideBar from "./components/SideBar"
 import WeatherBlocks from "./components/WeatherBlocks"
 import Highlights from "./components/Highlights"
@@ -36,6 +36,8 @@ function App() {
        {/* <button onClick={console.log(counter.longitude)}></button> */}
       </div>
     </div>
+
+   
     
   )
 }

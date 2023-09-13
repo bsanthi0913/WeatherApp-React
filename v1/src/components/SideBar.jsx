@@ -212,9 +212,9 @@ export default function SideBar(props) {
       <div className="sidebar">
           
           <div className="searchbar ">
-              <form>
-                  <button id="searchButton" type="submit">Submit</button>
-                  <input value={value} id="searchBox" type="text" placeholder="Search City" onChange={handleOnChange}/>
+              <form className="formbar">
+                  <button className="searchbutton" id="searchButton" type="submit">Submit</button>
+                  <input className="typeinput" value={value} id="searchBox" type="text" placeholder="Search City" onChange={handleOnChange}/>
                   
               </form>
               
