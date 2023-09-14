@@ -2,7 +2,7 @@ import React from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 import { NavLink } from 'react-router-dom';
 
-export default function Login() {
+export default function Signup() {
   return (
     <section className="h-full pl-20 grid place-content-center ">
       <div className="container h-full p-20 justify-center ml-20">

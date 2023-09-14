@@ -34,7 +34,7 @@ function App() {
   
             {/* <button onClick={console.log(counter.longitude)}></button> */}
           </div>
-        </div>
+      </div>
     )
   }
 
@@ -42,12 +42,12 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Page/> } />
+        <Route path="/home" element={Page() } />
         <Route path="/register" element= {<Signup/>} />
-      </Routes>
-      
-        
+      </Routes>  
     </Router>
+
+    
     
   );
 }
