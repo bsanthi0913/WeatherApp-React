@@ -34,7 +34,8 @@ function App() {
   
             {/* <button onClick={console.log(counter.longitude)}></button> */}
           </div>
-        </div>
+        
+      </div>
     )
   }
 
@@ -48,6 +49,7 @@ function App() {
       
         
     </Router>
+    
     
   );
 }
