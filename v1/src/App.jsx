@@ -14,29 +14,26 @@ function App() {
   function something() {
     setCounter(() => counter + 1);
   }
-  // useEffect(() => {
-  //   GetWeatherInfo().then ( info => {
-  //     setCounter(info)
-  //   })
-  // },[]);
 
   const [data, setData] = useState({});
   // const [click, setClick] = useState(false);
+  const bg="./images/back-sunny.jpeg";
   function Page() {
     return (
-      <div id="display-page" className="wrapper">
-
-        <SideBar data={data} setData={setData} />
-        <div className="main">
-          <Sidenav />
-          <WeatherBlocks data={data} setData={setData} />
-          <Highlights data={data} setData={setData} />
-
-          {/* <button onClick={console.log(counter.longitude)}></button> */}
-        </div>
+      <div>
+      <div id="display-page" className="wrapper" style={{backgroundImage:`url(${bg})`,backgroundRepeat: "no-repeat",height:"120vh",width:"100vw"}}>
+          <SideBar data={data} setData={setData} />
+          <div className="main">
+            <Sidenav />
+            <WeatherBlocks data={data} setData={setData} />
+            <Highlights data={data} setData={setData} />
+  
+            {/* <button onClick={console.log(counter.longitude)}></button> */}
+          </div>
       </div>
-    );
-
+      </div>
+      
+    )
   }
 
   return (
