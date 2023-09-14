@@ -426,9 +426,141 @@ export default function WeatherBlocks(props) {
       );
     }
   }, [props.data]);
+  // icons
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      if (
+        getHours(
+          props.data.currentConditions.datetimeEpoch,
+          props.data.currentConditions.datetime
+        ) === 23
+      )
+        hsetIcon1(`./weather-icons/${props.data.days[1].hours[0].icon}.svg`);
+      else
+        hsetIcon1(
+          `./weather-icons/${
+            props.data.days[1].hours[
+              getHours1(
+                props.data.currentConditions.datetimeEpoch,
+                props.data.currentConditions.datetime
+              )
+            ].icon
+          }.svg`
+        );
+    }
+  }, [props.data]);
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      if (
+        getHours(
+          props.data.currentConditions.datetimeEpoch,
+          props.data.currentConditions.datetime
+        ) === 22
+      )
+        hsetIcon2(`./weather-icons/${props.data.days[1].hours[0].icon}.svg`);
+      else
+        hsetIcon2(
+          `./weather-icons/${
+            props.data.days[1].hours[
+              getHours2(
+                props.data.currentConditions.datetimeEpoch,
+                props.data.currentConditions.datetime
+              )
+            ].icon
+          }.svg`
+        );
+    }
+  }, [props.data]);
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      if (
+        getHours(
+          props.data.currentConditions.datetimeEpoch,
+          props.data.currentConditions.datetime
+        ) === 21
+      )
+        hsetIcon3(`./weather-icons/${props.data.days[1].hours[0].icon}.svg`);
+      else
+        hsetIcon3(
+          `./weather-icons/${
+            props.data.days[1].hours[
+              getHours3(
+                props.data.currentConditions.datetimeEpoch,
+                props.data.currentConditions.datetime
+              )
+            ].icon
+          }.svg`
+        );
+    }
+  }, [props.data]);
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      if (
+        getHours(
+          props.data.currentConditions.datetimeEpoch,
+          props.data.currentConditions.datetime
+        ) === 20
+      )
+        hsetIcon4(`./weather-icons/${props.data.days[1].hours[0].icon}.svg`);
+      else
+        hsetIcon4(
+          `./weather-icons/${
+            props.data.days[1].hours[
+              getHours4(
+                props.data.currentConditions.datetimeEpoch,
+                props.data.currentConditions.datetime
+              )
+            ].icon
+          }.svg`
+        );
+    }
+  }, [props.data]);
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      if (
+        getHours(
+          props.data.currentConditions.datetimeEpoch,
+          props.data.currentConditions.datetime
+        ) === 19
+      )
+        hsetIcon5(`./weather-icons/${props.data.days[1].hours[0].icon}.svg`);
+      else
+        hsetIcon5(
+          `./weather-icons/${
+            props.data.days[1].hours[
+              getHours5(
+                props.data.currentConditions.datetimeEpoch,
+                props.data.currentConditions.datetime
+              )
+            ].icon
+          }.svg`
+        );
+    }
+  }, [props.data]);
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      if (
+        getHours(
+          props.data.currentConditions.datetimeEpoch,
+          props.data.currentConditions.datetime
+        ) === 18
+      )
+        hsetIcon6(`./weather-icons/${props.data.days[1].hours[0].icon}.svg`);
+      else
+        hsetIcon6(
+          `./weather-icons/${
+            props.data.days[1].hours[
+              getHours6(
+                props.data.currentConditions.datetimeEpoch,
+                props.data.currentConditions.datetime
+              )
+            ].icon
+          }.svg`
+        );
+    }
+  }, [props.data]);
 
   // temp
-
   useEffect(() => {
     if (props.data && props.data.days) {
       if (
@@ -561,11 +693,12 @@ export default function WeatherBlocks(props) {
         );
     }
   }, [props.data]);
+
   if (toggle) {
     return (
       <div className="main">
         <button onClick={handleClick} class="btn btn-dark mb-5 bg-slate-300">
-          Toggle State
+          Click for Hourly Forecast
         </button>
         {/* <h1 className="weather-condition">Rainfall</h1> */}
         {/* <nav>
@@ -642,13 +775,13 @@ export default function WeatherBlocks(props) {
     return (
       <div className="main">
         <button onClick={handleClick} class="btn btn-dark mb-5 bg-slate-300">
-          Toggle State
+          Click for Daily Forecast
         </button>
         <ul className="cards">
           <li className="card">
             <h2 className="day-name">{htime1}</h2>
             <div className="card-icon">
-              <img src={icon1} alt="no-image" />
+              <img src={hicon1} alt="no-image" />
             </div>
             <div className="day-temp">
               <h2 className="temp">{htemp1}</h2>
@@ -658,7 +791,7 @@ export default function WeatherBlocks(props) {
           <li className="card">
             <h2 className="day-name">{htime2}</h2>
             <div className="card-icon">
-              <img src={icon2} alt="no-image" />
+              <img src={hicon2} alt="no-image" />
             </div>
             <div className="day-temp">
               <h2 className="temp">{htemp2}</h2>
@@ -668,7 +801,7 @@ export default function WeatherBlocks(props) {
           <li className="card">
             <h2 className="day-name">{htime3}</h2>
             <div className="card-icon">
-              <img src={icon3} alt="no-image" />
+              <img src={hicon3} alt="no-image" />
             </div>
             <div className="day-temp">
               <h2 className="temp">{htemp3}</h2>
@@ -678,7 +811,7 @@ export default function WeatherBlocks(props) {
           <li className="card">
             <h2 className="day-name">{htime4}</h2>
             <div className="card-icon">
-              <img src={icon4} alt="no-image" />
+              <img src={hicon4} alt="no-image" />
             </div>
             <div className="day-temp">
               <h2 className="temp">{htemp4}</h2>
@@ -688,7 +821,7 @@ export default function WeatherBlocks(props) {
           <li className="card">
             <h2 className="day-name">{htime5}</h2>
             <div className="card-icon">
-              <img src={icon5} alt="no-image" />
+              <img src={hicon5} alt="no-image" />
             </div>
             <div className="day-temp">
               <h2 className="temp">{htemp5}</h2>
@@ -698,7 +831,7 @@ export default function WeatherBlocks(props) {
           <li className="card">
             <h2 className="day-name">{htime6}</h2>
             <div className="card-icon">
-              <img src={icon6} alt="no-image" />
+              <img src={hicon6} alt="no-image" />
             </div>
             <div className="day-temp">
               <h2 className="temp">{htemp6}</h2>
