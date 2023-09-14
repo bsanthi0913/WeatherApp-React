@@ -25,6 +25,7 @@ function App() {
   function Page() {
     return (
       <div id="display-page" className="wrapper">
+
         <SideBar data={data} setData={setData} />
         <div className="main">
           <Sidenav />
@@ -35,16 +36,21 @@ function App() {
         </div>
       </div>
     );
+
   }
 
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Login />} /> */}
-        <Route path="/" element={<Page />} />
-        <Route path="/register" element={<Signup />} />
-      </Routes>
+
+
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={Page() } />
+        <Route path="/register" element= {<Signup/>} />
+      </Routes>  
     </Router>
+
+   
   );
 }
 
