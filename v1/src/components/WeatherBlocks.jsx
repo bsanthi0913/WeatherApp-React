@@ -564,7 +564,7 @@ export default function WeatherBlocks(props) {
   if (toggle) {
     return (
       <div className="main">
-        <button onClick={handleClick} class="btn btn-dark mb-5">
+        <button onClick={handleClick} class="btn btn-dark mb-5 bg-slate-300">
           Toggle State
         </button>
         {/* <h1 className="weather-condition">Rainfall</h1> */}
@@ -641,7 +641,7 @@ export default function WeatherBlocks(props) {
   } else {
     return (
       <div className="main">
-        <button onClick={handleClick} class="btn btn-dark mb-5">
+        <button onClick={handleClick} class="btn btn-dark mb-5 bg-slate-300">
           Toggle State
         </button>
         <ul className="cards">
