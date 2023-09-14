@@ -211,9 +211,10 @@ export default function SideBar(props) {
     setIcon1(day1.icon);
     setIcon2(day2.icon);
   }
+ 
 
   return (
-    <div className="wrapper-bar">
+    <div className="wrapper-bar" >
       <div className="sidebar">
         <div className="searchbar ">
           <form className="formbar">
@@ -230,84 +231,6 @@ export default function SideBar(props) {
             />
           </form>
         </div>
-
-        {/* <ul className="dropdown-container" id="suggestions"></ul>
-          <SuggestionDropdown suggestionList = {suggestionList}/>
-         
-
-          
-          <div  className="cloud">
-              <img id="icon" className="img-bar" src={`./weather-icons/${icon}.svg`}/>
-          </div>
-          
-         
-          <div className="location">
-              
-              <i className="fa-solid fa-location-dot"></i>
-              <div id="loc">{address.name + " ," + address.country}</div>
-              
-          </div>
-
-         
-          <div id="temperature" className="temp-bar">
-              {Math.trunc(temp,2) + "\u00b0C"}
-          </div>
-
-          
-          <div id="day-sidebar" className="day">
-              {current_day.day + " ," + current_day.time}
-          </div>
-
-          <hr/>
-
-          <div className="heading">
-              The Next Day Forecast
-          </div>
-
-          
-          <div className="daily">
-              <div className="daytwo">
-                 2 Days
-              </div>
-              <div className="dayseven">
-                  7 Days
-              </div>
-          </div>
-
-          
-
-          <table>
-            <tbody>
-              <tr>
-                  <td className="image-cell"><img id="image1-sidebar" src={`./weather-icons/${icon1}.svg`} alt="Image 1"/></td>
-                  <td className="text-cell" id="image1-text">Sun ,Dec 24 </td>
-
-              </tr>
-              </tbody>
-              </table>
-
-          <table>
-          <tbody>
-              <tr className="row2">
-                  <td className="image-cell" ><img id="image2-sidebar" src={`./weather-icons/${icon2}.svg`} alt="Image 2"/></td>
-                  <td className="text-cell" id="image2-text">Mon ,Dec 25 </td>
-              </tr>
-              </tbody>
-          </table>
-        <div className="searchbar ">
-          <form>
-            <button id="searchButton" type="submit">
-              Submit
-            </button>
-            <input
-              value={value}
-              id="searchBox"
-              type="text"
-              placeholder="Search City"
-              onChange={handleOnChange}
-            />
-          </form>
-        </div> */}
 
         {/* <ul className="dropdown-container" id="suggestions"></ul> */}
         <SuggestionDropdown suggestionList={suggestionList} />
