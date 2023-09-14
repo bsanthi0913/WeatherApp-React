@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router , Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Sidenav from "./components/Sidenav";
 import SideBar from "./components/SideBar";
@@ -40,14 +39,15 @@ function App() {
   return (
     <Router>
       <Routes>
+
+
         <Route path="/" element={<Login />} />
         <Route path="/home" element={Page() } />
         <Route path="/register" element= {<Signup/>} />
       </Routes>  
     </Router>
 
-    
-    
+   
   );
 }
 

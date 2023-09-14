@@ -12,10 +12,11 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   /* padding: 50px; */
-  
+
   background-color: black;
   background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   height: 100%;
+
 
   /* background-image: url("./images/rain_green.avif");  */
    
@@ -111,7 +112,6 @@ input {
   border-radius: 5px;
 }
 .formbar {
-  
   color: white;
   display: flex;
   padding: 2px;
@@ -152,17 +152,16 @@ input[type="text"]::placeholder {
   opacity: 1;
 }
 
- button[type="submit"]:hover {
+button[type="submit"]:hover {
   opacity: 1;
-} 
-
+}
 
 i {
   font-size: 20px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 5px;
-} 
+}
 
 .temp-bar {
   font-size: 80px;
@@ -208,97 +207,57 @@ hr {
 /* styles.css */
 
 .dropdown-container {
+  height: 100px; /* Set your desired fixed height here */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  border: 1px transparent; /* Add a border for styling */
 
-    height: 100px; /* Set your desired fixed height here */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    border: 1px transparent;/* Add a border for styling */
-    
-    margin-left: 20px;
-    margin-right: 20px;
- }
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
- 
+table,
+th,
+td {
+  border: 1px transparent;
+}
 
- table {
-     width: 100%;
-     border-collapse: collapse;
- }
- 
-  
- 
- table, th, td {
- 
-     border: 1px transparent;
- 
- }
- 
-  
- 
- th, td {
- 
-     padding: 10px;
- 
-     text-align: left;
- 
- }
- 
-  
- 
- .image-cell {
- 
-     width: 30%;
- 
-     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
- 
-     
- 
- }
- 
- td.image-cell {
- 
-    
- 
-     padding: 5px; 
- 
-     border-radius: 10px; 
- 
- }
- 
-  
- 
-  
- 
- .text-cell {
- 
-     padding-top: 25px;
- 
-     width: 70%;
- 
- }
- 
- td{
- 
-     padding-bottom: 30px;
- 
- }
- 
- table{
- 
-     margin-bottom: 30px;
- 
- }
- 
-  
- 
-  
- 
-  
- 
-  
+th,
+td {
+  padding: 10px;
 
+  text-align: left;
+}
 
+.image-cell {
+  width: 30%;
 
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+td.image-cell {
+  padding: 5px;
+
+  border-radius: 10px;
+}
+
+.text-cell {
+  padding-top: 25px;
+
+  width: 70%;
+}
+
+td {
+  padding-bottom: 30px;
+}
+
+table {
+  margin-bottom: 30px;
+}
 
 /* .main{
   height: 100px; 
@@ -356,8 +315,7 @@ table {
   margin-bottom: 30px;
 } */
 
- .main {
-
+.main {
   width: 100vw;
 
   min-width: 400px;
@@ -412,6 +370,8 @@ table {
   /* backdrop-filter: blur(2px);
   backdrop-filter: opacity(20%); */
   box-shadow: 10px 10px 10px rgb(49, 113, 135);
+  margin-left: 40px;
+  margin-right: 3px;
 }
 
 .cards .card-icon {
@@ -427,7 +387,7 @@ table {
   justify-content: space-between;
 
   box-shadow: 3px 3px rgba(2, 25, 34, 0.221);
-} 
+}
 .main h1 {
   font-size: 50px;
   font-weight: 600;
@@ -459,7 +419,6 @@ table {
 } */
 
 /* ------------My CSS------- */
-
 
 .card2 {
   box-shadow: 10px 10px 10px rgb(49, 113, 135);
@@ -504,8 +463,6 @@ table {
 .card2 .content {
   margin-top: 20px;
 }
-
-
 
 /* UV Index */
 
