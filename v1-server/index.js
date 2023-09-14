@@ -9,7 +9,7 @@ const cors = require("cors");
 const connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : 'santhi',
+	password : 'root',
 	database : 'nodelogin'
 });
 
