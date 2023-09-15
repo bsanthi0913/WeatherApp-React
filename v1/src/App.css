@@ -17,9 +17,8 @@ body {
   background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   height: 100%;
 
-
   /* background-image: url("./images/rain_green.avif");  */
-   
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -324,7 +323,20 @@ table {
   padding-bottom: 90px;
   /* backdrop-filter: blur(10px); */
 }
-
+.main .flex-box {
+  margin-left: auto;
+  display: flex;
+}
+.main .flex-box button {
+  background-color: rgba(0, 0, 0, 0.375);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  justify-content: space-between;
+}
+.main .flex-box .weather-condition {
+  margin-right: 300px;
+  justify-content: space-between;
+}
 .main nav {
   display: flex;
   align-items: center;
@@ -337,7 +349,7 @@ table {
 }
 .main nav .options button {
   color: #fff;
-  background-color: rgb(74, 73, 73);
+  background-color: rgba(0, 0, 0, 0.361);
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 5px;

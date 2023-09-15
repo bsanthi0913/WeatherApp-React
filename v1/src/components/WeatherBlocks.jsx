@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function WeatherBlocks(props) {
   const [toggle, setToggle] = useState(true);
+  const [weatherCond, setweatherCond] = useState("Rainfall");
   const [time1, setTime1] = useState("Tuesday");
   const [time2, setTime2] = useState("Wednesday");
   const [time3, setTime3] = useState("Thursday");
@@ -266,7 +267,11 @@ export default function WeatherBlocks(props) {
     }
     return `${hours12 + 1} ${ampm}`;
   }
-
+  useEffect(() => {
+    if (props.data && props.data.days) {
+      setweatherCond(props.data.currentConditions.conditions);
+    }
+  }, [props.data]);
   // daily
   // time
   useEffect(() => {
@@ -697,10 +702,11 @@ export default function WeatherBlocks(props) {
   if (toggle) {
     return (
       <div className="main">
-        <button onClick={handleClick} class="btn btn-dark mb-5 bg-slate-300">
-          Click for Hourly Forecast
-        </button>
-        {/* <h1 className="weather-condition">Rainfall</h1> */}
+        <div className="flex-box">
+          <h1 className="weather-condition">{weatherCond}</h1>
+          <button onClick={handleClick}>Click for Hourly Forecast</button>
+        </div>
+
         {/* <nav>
           <ul className="options">
             <button className="hourly">Today</button>
@@ -774,9 +780,10 @@ export default function WeatherBlocks(props) {
   } else {
     return (
       <div className="main">
-        <button onClick={handleClick} class="btn btn-dark mb-5 bg-slate-300">
-          Click for Daily Forecast
-        </button>
+        <div className="flex-box">
+          <h1 className="weather-condition">{weatherCond}</h1>
+          <button onClick={handleClick}>Click for Daily Forecast</button>
+        </div>
         <ul className="cards">
           <li className="card">
             <h2 className="day-name">{htime1}</h2>
