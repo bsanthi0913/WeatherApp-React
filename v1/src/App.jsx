@@ -47,7 +47,7 @@ function App() {
       }
     }, [data]);
     return (
-      <div id="display-page" className="wrapper" style={{backgroundImage:`url(${bg})`,backgroundRepeat: "no-repeat",height:"120vh",width:"100vw"}}>
+      <div id="display-page" className="wrapper" style={{backgroundImage:`url(${bg})`,backgroundRepeat: "no-repeat",height:"150vh",width:"100vw"}}>
           <SideBar data={data} setData={setData} />
           <div className="main">
             <Sidenav />
