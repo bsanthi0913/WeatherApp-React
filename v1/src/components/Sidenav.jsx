@@ -19,6 +19,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 // import "./Sidenav.css";
+import { NavLink } from 'react-router-dom';
 
 import SideBar from "./SideBar";
 import WeatherBlocks from "./WeatherBlocks";
@@ -186,7 +187,7 @@ export default function Sidenav() {
             color: "rgb(218, 211, 211)",
           }}
         >
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {["All mail", "Trash", "spam"].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
@@ -209,6 +210,9 @@ export default function Sidenav() {
             </ListItem>
           ))}
         </List>
+        <NavLink to="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500 !pt-8">
+            <img src="./images/logout.jpeg" alt="Logout" />
+        </NavLink>
       </Drawer>
       <Box
         component="main"
