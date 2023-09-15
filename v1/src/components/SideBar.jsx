@@ -211,10 +211,9 @@ export default function SideBar(props) {
     setIcon1(day1.icon);
     setIcon2(day2.icon);
   }
- 
 
   return (
-    <div className="wrapper-bar" >
+    <div className="wrapper-bar">
       <div className="sidebar">
         <div className="searchbar ">
           <form className="formbar">
