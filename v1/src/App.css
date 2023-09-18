@@ -70,7 +70,9 @@ body {
   border-radius: 30px; */
   opacity: 1;
 }
-
+.table-bar{
+  margin-top: 50px;
+}
 .location {
   /* background-color: aqua; */
   display: flex;

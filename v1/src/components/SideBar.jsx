@@ -259,12 +259,12 @@ export default function SideBar(props) {
 
         <div className="heading">The Next Day Forecast</div>
 
-        <div className="daily">
+        {/* <div className="daily">
           <div className="daytwo">2 Days</div>
           <div className="dayseven">7 Days</div>
-        </div>
+        </div> */}
 
-        <table>
+        <table className="table-bar">
           <tbody>
             <tr>
               <td className="image-cell">
