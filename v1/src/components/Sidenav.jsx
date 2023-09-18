@@ -19,7 +19,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 // import "./Sidenav.css";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 import SideBar from "./SideBar";
 import WeatherBlocks from "./WeatherBlocks";
@@ -144,7 +144,7 @@ export default function Sidenav() {
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider />
+        {/* <Divider />
         <List
           sx={{
             background: "rgba(0, 0, 0, 0.361)",
@@ -209,9 +209,12 @@ export default function Sidenav() {
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
-        <NavLink to="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500 !pt-8">
-            <img src="./images/logout.jpeg" alt="Logout" />
+        </List> */}
+        <NavLink
+          to="/"
+          class="font-medium text-primary-600 hover:underline dark:text-primary-500 !pt-8"
+        >
+          <img src="./images/logout.jpeg" alt="Logout" />
         </NavLink>
       </Drawer>
       <Box
