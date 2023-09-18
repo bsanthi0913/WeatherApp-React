@@ -94,7 +94,7 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function Sidenav() {
+export default function Sidenav(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -130,7 +130,7 @@ export default function Sidenav() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            IQ Weather App
+            Welcome {props.username}
           </Typography>
         </Toolbar>
       </AppBar>

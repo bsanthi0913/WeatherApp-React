@@ -20,9 +20,10 @@ function App() {
   
   
   
-  
+  const [username, setUsername] = useState("");
 
   function Page() {
+    
     const [data, setData] = useState({});
     //let bg="./images/rain_green.avif";
     const [bg,Setbg] = useState("./images/rain_green.avif");
@@ -50,7 +51,7 @@ function App() {
       <div id="display-page" className="wrapper" style={{backgroundImage:`url(${bg})`,backgroundRepeat: "no-repeat",height:"150vh",width:"100vw"}}>
           <SideBar data={data} setData={setData} />
           <div className="main">
-            <Sidenav />
+            <Sidenav username={username} setUsername={setUsername} />
             <WeatherBlocks data={data} setData={setData} />
             <Highlights data={data} setData={setData} />
   
@@ -64,7 +65,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login username={username} setUsername={setUsername} />} />
         <Route path="/home" element={<Page/> } />
         <Route path="/register" element= {<Signup/>} />
       </Routes>  

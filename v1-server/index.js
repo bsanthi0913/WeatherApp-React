@@ -49,7 +49,9 @@ app.post('/login', function(request, response) {
 				// request.session.loggedin = true;
 				// request.session.username = username;
 				// Redirect to home page
-				response.status(200).json({message: "success"});
+                console.log(results[0].username);
+				response.status(200).json({message: results[0].username});
+
 			} else {
 				response.send('Incorrect Username and/or Password!');
 			}			
@@ -68,6 +70,12 @@ app.post("/register", (req, res) => {
     let confirm=  req.body.confirm;
 
     if(email && name && password && confirm){
+        if(password != confirm){
+            console.log("----> password not same");
+            res.sendStatus(409);
+            return;
+        }
+        
         console.log("inside");
         const sqlSearch = "SELECT * FROM accounts WHERE email = ?";
         const search_query = mysql.format(sqlSearch,[email]);

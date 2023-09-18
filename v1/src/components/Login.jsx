@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 
-export default function Login() {
+export default function Login(props) {
 
   const [email,  setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +20,7 @@ export default function Login() {
   } ).then( response => {
     console.log(response.data.message);
     if( response.status === 200){
+      props.setUsername(response.data.message);
       navigate("/home");
     } 
   });
@@ -58,6 +59,7 @@ export default function Login() {
                       <label for="email" class="block text-sm font-medium text-gray-900 dark:text-black">Your email</label>
                       <TEInput type="email" name="email" id="email" onChange={(e) => {
                 setEmail(e.target.value);
+                // props.setUsername(e.target.value);
 
               }} class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required=""> </TEInput>
                   </div>
