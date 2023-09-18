@@ -20,6 +20,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 // import "./Sidenav.css";
 import { NavLink } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import SideBar from "./SideBar";
 import WeatherBlocks from "./WeatherBlocks";
@@ -97,6 +98,10 @@ const Drawer = styled(MuiDrawer, {
 export default function Sidenav() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -108,6 +113,7 @@ export default function Sidenav() {
 
   return (
     <Box sx={{ display: "flex" }}>
+      
       <CssBaseline />
       <AppBar sx={{ background: "#black" }} position="fixed" open={open}>
         <Toolbar
@@ -123,6 +129,7 @@ export default function Sidenav() {
             onClick={handleDrawerOpen}
             edge="start"
             sx={{
+              
               marginRight: 5,
               ...(open && { display: "none" }),
             }}
@@ -130,8 +137,12 @@ export default function Sidenav() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            IQ Weather App
+            {
+              isAuthenticated ? <p className="!inline-block">Logged in with {user.name}</p> :<p>Please Login</p>
+            }
+            {/* <p className="!justify-center">Weather App</p> */}
           </Typography>
+          
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -144,14 +155,14 @@ export default function Sidenav() {
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider />
-        <List
+        {/* <Divider /> */}
+        {/* <List
           sx={{
             background: "rgba(0, 0, 0, 0.361)",
             color: "rgb(218, 211, 211)",
           }}
-        >
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        > */}
+          {/* {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
             <ListItem
               key={text}
               disablePadding
@@ -178,16 +189,16 @@ export default function Sidenav() {
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List
+          ))} */}
+        {/* </List> */}
+        {/* <Divider /> */}
+        {/* <List
           sx={{
             background: "rgba(0, 0, 0, 0.361)",
             color: "rgb(218, 211, 211)",
           }}
-        >
-          {["All mail", "Trash", "spam"].map((text, index) => (
+        > */}
+          {/* {["All mail", "Trash", "spam"].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
@@ -208,16 +219,22 @@ export default function Sidenav() {
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-          ))}
-        </List>
-        <NavLink to="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500 !pt-8">
-            <img src="./images/logout.jpeg" alt="Logout" />
-        </NavLink>
+          ))} */}
+        {/* </List> */}
+        {
+          isAuthenticated?
+          <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+      <img src="./images/logout.jpeg" alt="Logout" />
+    </button> : <button onClick={() => loginWithRedirect()}>
+    <img src="./images/login.jpeg" alt="Logout" />
+    </button> 
+      }
+        {/* <button onClick={() => loginWithRedirect()}>Log In</button>
+        <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}> */}
+      {/* Log Out
+    </button> */}
       </Drawer>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, marginLeft: "none" }}
-      ></Box>
+      
     </Box>
   );
 }

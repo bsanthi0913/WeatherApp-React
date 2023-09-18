@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import GetWeatherInfo from "./services/GetWeatherInfo.jsx";
 import Signup from "./components/Signup";
 
+
 function App() {
   const [counter, setCounter] = useState(0);
   function something() {
@@ -64,9 +65,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Page/> } />
-        <Route path="/register" element= {<Signup/>} />
+        {/* <Route path="/" element={<Login />} /> */}
+        <Route path="/" element={<Page/> } />
+        {/* <Route path="/register" element= {<Signup/>} /> */}
       </Routes>  
     </Router>
 

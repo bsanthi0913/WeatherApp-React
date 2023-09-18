@@ -235,7 +235,6 @@ function processing2(time)
     <div className="highlights">
         <h2 className="heading">Today's Highlights</h2>
         <div className="cards">
-
           <div className="card2">
             <h4 className="card-heading">UV Index</h4>
             <div className="content">
