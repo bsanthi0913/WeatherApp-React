@@ -21,7 +21,7 @@ export default function Login() {
     console.log(response.data.message);
     if( response.status === 200){
       navigate("/home");
-    }
+    } 
   });
   }
 

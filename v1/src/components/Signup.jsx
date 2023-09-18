@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState} from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 export default function Signup() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const navigate = useNavigate();
+
+  const handleregister = () => {
+    
+    
+    axios.post("http://localhost:3000/register",{
+    email : email,
+    name: name,
+    password : password,
+    confirm: confirm
+
+  } ).then( response => {
+    //console.log(response.data.message);
+    if( response.status === 200){
+      navigate("/");
+    } 
+  });
+  }
   return (
     <section className="h-full pl-20 grid place-content-center ">
       <div className="container h-full p-20 justify-center ml-20">
@@ -25,29 +49,29 @@ export default function Signup() {
                       </h4>
                     </div>
 
-                    <form class="space-y-4 md:space-y-6" action="#">
+                    <form class="space-y-4 md:space-y-6" action="#" onSubmit={(e) => e.preventDefault()}>
                   <div>
                       <label for="name" class="block text-sm font-medium text-gray-900 dark:text-black">Your Name</label>
-                      <TEInput type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John drew" required=""> </TEInput>
+                      <TEInput type="text" name="name" id="name" onChange={(e) => setName(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John drew" required=""> </TEInput>
                   </div>
                   <div>
                       <label for="email" class="block text-sm font-medium text-gray-900 dark:text-black">Your email</label>
-                      <TEInput type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required=""> </TEInput>
+                      <TEInput type="email" name="email" id="email"  onChange={(e) => setEmail(e.target.value)}  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required=""> </TEInput>
                   </div>
                   <div>
                       <label for="password" class="block text-sm font-medium text-gray-900 dark:text-black">Password</label>
-                      <TEInput type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""> </TEInput>
+                      <TEInput type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)}  placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""> </TEInput>
                   </div>
 
                   <div>
                       <label for="re-password" class="block text-sm font-medium text-gray-900 dark:text-black">Confirm Password</label>
-                      <TEInput type="password" name="re-password" id="re-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""> </TEInput>
+                      <TEInput type="password" name="re-password" id="re-password" onChange={(e) => setConfirm(e.target.value)}  placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""> </TEInput>
                   </div>
                   
-                  <button type="submit" class="border-solid border-2 border-sky-500 w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
+                  <button type="submit" onClick = {handleregister}class="border-solid border-2 border-sky-500 w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
                   <p class="text-sm font-light text-gray-500 dark:text-black">
                       Have an account yet? 
-                      <NavLink to="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500" >
+                      <NavLink to="/"  class="font-medium text-primary-600 hover:underline dark:text-primary-500" >
                       Sign in
                       </NavLink>
                   </p>
