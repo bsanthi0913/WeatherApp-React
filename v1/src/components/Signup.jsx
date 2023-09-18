@@ -70,8 +70,10 @@ export default function Signup() {
                   
                   <button type="submit" onClick = {handleregister}class="border-solid border-2 border-sky-500 w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
                   <p class="text-sm font-light text-gray-500 dark:text-black">
-                      Have an account yet? 
-                      <NavLink to="/"  class="font-medium text-primary-600 hover:underline dark:text-primary-500" >
+
+                      Have an account? 
+                      <NavLink to="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500" >
+
                       Sign in
                       </NavLink>
                   </p>
