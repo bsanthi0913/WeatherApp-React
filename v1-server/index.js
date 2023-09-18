@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const cors = require("cors");
+const { log } = require('console');
 
 
 
@@ -59,6 +60,37 @@ app.post('/login', function(request, response) {
 		response.end();
 	}
 });
+
+app.post("/register", (req, res) => {
+    let email  = req.body.email;
+    let name = req.body.name;
+    let password =  req.body.password;
+    let confirm=  req.body.confirm;
+
+    if(email && name && password && confirm){
+        console.log("inside");
+        const sqlSearch = "SELECT * FROM accounts WHERE email = ?";
+        const search_query = mysql.format(sqlSearch,[email]);
+        const sqlInsert = "INSERT INTO accounts VALUES (0,?,?,?)";
+        const insert_query = mysql.format(sqlInsert,[name, password, email]);
+        connection.query(search_query, function (error, results, fields){
+            if( error) throw error;
+            if( results.length != 0){
+                console.log("---> user already exists");
+                res.sendStatus(409);
+            }
+            else{
+                connection.query(insert_query, (error, results, fields)=> {
+                    if( error) throw error;
+                    console.log(" ====> createed new user");
+                    res.sendStatus(200);
+                });
+            }
+        });
+
+    }
+
+})
 
 // // http://localhost:3000/home
 // app.get('/home', function(request, response) {
